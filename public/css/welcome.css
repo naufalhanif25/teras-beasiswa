@@ -1,0 +1,45 @@
+header {
+    width: 100vw;
+    background-color: var(--base);
+}
+
+.button {
+    transition: 160ms ease-out;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.solid-button {
+    background-color: var(--base);
+    padding: 8px 24px;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: 160ms ease-out;
+}
+
+.solid-button:hover {
+    background-color: var(--base-400);
+}
+
+.feature {
+    border-radius: 16px;
+    border-color: var(--base-mid);
+    border-width: 1.6px;
+    color: var(--text-black);
+}
+
+.quote {
+    padding: 16px 32px;
+    background-color: rgba(8, 8, 8, 0.08);
+    border-color: var(--base);
+    border-bottom-width: 1.6px;
+}
+
+footer {
+    padding: 12px 0px;
+    width: 100vw;
+    background-color: var(--base-32);
+    color: var(--text-black);
+}

@@ -1,0 +1,46 @@
+* {
+    color: var(--text-black);
+    font-size: 12pt;
+}
+
+.auth-box {
+    width: 420px;
+    border-color: var(--base-32);
+    border-width: 1.6px;
+}
+
+.fp-box {
+    width: 640px;
+    border-color: var(--base-32);
+    border-width: 1.6px;
+}
+
+input {
+    padding: 8px 16px;
+    outline: none;
+    border-color: var(--base-mid);
+    border-width: 1.6px;
+    border-radius: 32px;
+}
+
+.title {
+    font-size: 24px;
+}
+
+.checkbox {
+    accent-color: var(--base);
+    background-color: var(--background);
+}
+
+button {
+    background-color: var(--base);
+    color: var(--text-white);
+    padding: 8px 24px;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: 160ms ease-out;
+}
+
+button:hover {
+    background-color: var(--base-400);
+}

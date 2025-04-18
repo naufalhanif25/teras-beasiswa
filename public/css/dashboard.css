@@ -1,0 +1,160 @@
+* {
+    color: var(--text-black);
+    font-size: 12pt;
+}
+
+nav {
+    width: 100vw;
+    background-color: var(--base);
+    color: var(--text-white);
+}
+
+input {
+    padding: 8px 16px;
+    outline: none;
+    background-color: var(--background);
+    border-color: var(--base-mid);
+    border-width: 1.6px;
+    border-radius: 32px;
+}
+
+.profile-button {
+    background-color: transparent;
+    color: var(--text-white);
+}
+
+.profile-svg {
+    fill: var(--text-white);
+}
+
+.white-text {
+    color: var(--text-white);
+}
+
+.main-title {
+    font-size: 16pt;
+}
+
+.title {
+    font-size: 14pt;
+}
+
+.date {
+    font-size: 11pt;
+    color: var(--fg-mid);
+}
+
+.danger-button {
+    background-color: var(--danger);
+    color: var(--text-white);
+    border-radius: 32px;
+    padding: 6px 24px;
+    cursor: pointer;
+    transition: 160ms ease-out;
+}
+
+.danger-button:hover {
+    background-color: var(--danger-400);
+}
+
+.primary-button {
+    background-color: var(--base);
+    color: var(--text-white);
+    border-radius: 32px;
+    padding: 6px 24px;
+    width: fit-content;
+    cursor: pointer;
+    transition: 160ms ease-out;
+}
+
+.primary-button * {
+    color: var(--text-white);
+}
+
+.primary-button:hover {
+    background-color: var(--base-400);
+}
+
+.nav-b-color {
+    border-color: var(--base-32);
+    border-bottom-width: 2px;
+    border-style: solid;
+    transition: 160ms ease-out;
+}
+
+.nav-b-color:hover {
+    border-color: var(--base-mid);
+}
+
+.nav-b-color-none {
+    border-color: transparent;
+    border-bottom-width: 2px;
+    border-style: solid;
+}
+
+.dd-border {
+    border-color: var(--base-32);
+    border-width: 1.6px;
+    border-radius: 8px;
+}
+
+.password {
+    display: flex;
+    flex-direction: row;
+}
+
+.solid-button {
+    background-color: var(--base);
+    color: var(--text-white);
+    padding: 8px 24px;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: 160ms ease-out;
+}
+
+.solid-button:hover {
+    background-color: var(--base-400);
+}
+
+.container {
+    background-color: var(--base-32);
+    border-color: var(--base-mid);
+    border-width: 1.6px;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.cover-img {
+    border-radius: 8px;
+}
+
+footer {
+    padding: 12px 0px;
+    width: 100vw;
+    background-color: var(--base-32);
+    color: var(--text-black);
+}
+
+.pagination-button {
+    background-color: var(--base);
+    color: var(--text-white);
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: 160ms ease-out;
+}
+
+.pagination-button:hover {
+    background-color: var(--base-400);
+}
+
+.icon {
+    background-color: var(--base-32);
+    cursor: pointer;
+}
+
+.icon path {
+    fill: var(--fg-mid);
+}
+
