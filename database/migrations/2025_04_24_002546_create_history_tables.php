@@ -15,13 +15,14 @@ return new class extends Migration
             $table->id('id_history'); // Primary key
             $table->date('tanggal');
             $table->text('query');
-            $table->unsignedBigInteger('id_user'); // Foreign key
-
+        
+            // Foreign key ke users.id (bigint)
+            $table->unsignedBigInteger('user_id');
+        
             // Relasi ke tabel users
-            $table->foreign('id_user')->references('id_user')->on('users')->onDelete('cascade');
-            
-            $table->timestamps(); // created_at & updated_at
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
+        
     }
 
     /**
