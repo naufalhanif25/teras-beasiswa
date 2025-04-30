@@ -13,16 +13,14 @@ return new class extends Migration
     {
         Schema::create('info_beasiswa', function (Blueprint $table) {
             $table->id('id_beasiswa'); // Primary key
-            $table->string('nama_beasiswa');
+            $table->string('nama_beasiswa')->nullable();
             $table->text('deskripsi')->nullable();
-            $table->string('tanggal_buka');
-            $table->string('tanggal_tutup');
+            $table->string('tanggal_buka')->nullable();
+            $table->string('tanggal_tutup')->nullable();
             $table->string('cover')->nullable();
-            $table->string('kategori');
+            $table->text('kategori')->nullable();
             $table->string('url_sumber')->nullable();
             $table->string('url_panduan')->nullable();
-            $table->string('keyword')->nullable();
-            $table->timestamps(); // created_at & updated_at
         });
     }
 
