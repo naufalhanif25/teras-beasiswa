@@ -22,7 +22,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/dashboard', [App\Http\Controllers\BeasiswaController::class, 'index'])->name('dashboard');
-
 Route::get('/login-admin', function () {
     return view('Admin.Login');
 });
@@ -30,6 +29,5 @@ Route::get('/login-admin', function () {
 Route::get('/Form-admin', function () {
     return view('Admin.Form');
 });
-
 
 require __DIR__.'/auth.php';
