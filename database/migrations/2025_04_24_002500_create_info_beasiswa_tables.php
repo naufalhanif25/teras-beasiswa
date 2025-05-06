@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id('id_beasiswa'); // Primary key
             $table->string('nama_beasiswa')->nullable();
             $table->text('deskripsi')->nullable();
-            $table->date('tanggal_buka')->nullable();
-            $table->date('tanggal_tutup')->nullable();
+            $table->string('tanggal_buka')->nullable();
+            $table->string('tanggal_tutup')->nullable();
             $table->string('cover')->nullable();
             $table->text('kategori')->nullable();
             $table->string('url_sumber')->nullable();

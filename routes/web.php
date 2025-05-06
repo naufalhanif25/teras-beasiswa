@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/dashboard', [App\Http\Controllers\BeasiswaController::class, 'index'])->name('dashboard');
 Route::get('/login-admin', function () {
     return view('Admin.Login');
 });
@@ -29,7 +30,4 @@ Route::get('/Form-admin', function () {
     return view('Admin.Form');
 });
 
-
 require __DIR__.'/auth.php';
-
-
