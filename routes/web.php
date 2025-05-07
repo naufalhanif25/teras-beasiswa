@@ -2,18 +2,23 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\BeasiswaController;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
-Route::get('/history', function () {
-    return view('history');
-})->middleware(['auth', 'verified'])->name('history');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/history', [HistoryController::class, 'index'])->name('history');
+});
+Route::delete('/history/{id}', [HistoryController::class, 'destroy'])->name('history.destroy');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -21,7 +26,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/dashboard', [App\Http\Controllers\BeasiswaController::class, 'index'])->name('dashboard');
 Route::get('/login-admin', function () {
     return view('Admin.Login');
 });
