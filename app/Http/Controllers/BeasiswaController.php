@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\InfoBeasiswa;
+use App\Models\infoBeasiswa;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
@@ -19,7 +19,7 @@ class BeasiswaController extends Controller
             $keyword = $request->input('keyword');
             
             // Query dasar
-            $query = InfoBeasiswa::query();
+            $query = infoBeasiswa::query();
             
             // Jika ada keyword, tambahkan filter pencarian
             if ($keyword) {
