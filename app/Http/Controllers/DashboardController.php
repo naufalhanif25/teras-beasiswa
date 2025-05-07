@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\InfoBeasiswa; 
+use App\Models\infoBeasiswa; 
 use App\Models\History;
 use Illuminate\Support\Facades\Auth;
 
