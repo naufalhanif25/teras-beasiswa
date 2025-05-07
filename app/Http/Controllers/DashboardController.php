@@ -13,7 +13,6 @@ class DashboardController extends Controller
     {
         $keyword = $request->input('keyword');
 
-        // Simpan riwayat pencarian ke tabel history jika keyword diisi dan user login
         if ($keyword && Auth::check()) {
             History::create([
                 'query'   => $keyword,
@@ -22,12 +21,10 @@ class DashboardController extends Controller
             ]);
         }
 
-        // Ambil data beasiswa dengan filter keyword jika ada
         $beasiswa = InfoBeasiswa::when($keyword, function ($query) use ($keyword) {
             return $query->where('nama_beasiswa', 'like', '%' . $keyword . '%');
         })->paginate(10);
 
-        // Kirim data ke view dashboard.blade.php
         return view('dashboard', compact('beasiswa', 'keyword'));
     }
 }

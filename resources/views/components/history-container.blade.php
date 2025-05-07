@@ -5,7 +5,7 @@
         <p class="date lato-regular">{{ $date }}</p>
         <h1 class="lato-bold">{{ $name }}</h1> 
     </div>
-    <form action="{{ route('history.destroy', $id_history) }}" method="POST">
+    <form action="{{ route('history.destroy', $id_history) }}" method="POST" onsubmit="return confirm('Apakah Anda ingin menghapus riwayat {{ e($name) }}?')">
         @csrf
         @method('DELETE')
 

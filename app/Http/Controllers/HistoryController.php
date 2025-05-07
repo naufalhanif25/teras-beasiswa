@@ -17,17 +17,16 @@ class HistoryController extends Controller
     }
 
     public function destroy($id)
-{
-    $history = History::where('id_history', $id)->firstOrFail();
+    {
+        $history = History::where('id_history', $id)->firstOrFail();
 
-    if ($history->user_id !== auth()->id()) {
-        abort(403);
+        if ($history->user_id !== auth()->id()) {
+            abort(403);
+        }
+
+        $history->delete();
+
+        return redirect()->back()->with("Riwayat berhasil dihapus");
     }
-
-    $history->delete();
-
-    return redirect()->back();
-}
-
 }
 
