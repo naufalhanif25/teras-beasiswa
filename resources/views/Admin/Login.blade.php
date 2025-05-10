@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login Admin</title>
+  <title>{{ __('Login Admin') }}</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     input:-webkit-autofill {
@@ -14,6 +14,15 @@
   </style>
 </head>
 <body class="flex items-center justify-center min-h-screen bg-white">
+<div class="w-full fixed h-fit left-0 top-0 py-4">
+        <a
+        href="{{ route('welcome') }}"
+        class="text-[#0C9CEB] hover:text-[#36B5FA] hover:underline font-medium cursor-pointer px-8 rounded-full transition duration-200 ease-in-out">
+
+        Beranda
+        </a>
+    </div>
+
   <div class="w-full max-w-sm text-center">
     <h2 class="text-xl font-semibold text-gray-800 mb-6">Admin</h2>
 

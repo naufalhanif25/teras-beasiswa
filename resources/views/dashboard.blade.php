@@ -35,7 +35,7 @@
                 @if(isset($beasiswa) && count($beasiswa) > 0)
                     @foreach($beasiswa as $item)
                         <x-scholar-rec 
-                            src="{{ $item->cover ? asset($item->cover) : asset('img/illustration.jpg') }}"
+                            src="{{ $item->cover ? asset($item->cover) : asset('https://t3.ftcdn.net/jpg/05/79/68/24/360_F_579682465_CBq4AWAFmFT1otwioF5X327rCjkVICyH.jpg') }}"
                             name="{{ $item->nama_beasiswa }}"
                             date="{{ $item->tanggal_buka }} - {{ $item->tanggal_tutup }}"
                             desc="{{ $item->deskripsi }}"

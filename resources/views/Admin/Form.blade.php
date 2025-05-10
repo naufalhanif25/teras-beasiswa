@@ -3,16 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tambah Beasiswa</title>
+  <title>{{ __('Form Beasiswa') }}</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen bg-white">
-  <div class="w-full fixed h-fit left-0 top-0 py-4">
+  <div class="w-full fixed flex flex-row items-center justify-between h-fit left-0 top-0 py-4">
     <a
       href="{{ route('admin.logout') }}"
-      class="text-red-500 hover:text-red-600 hover:underline font-medium cursor-pointer px-8 rounded-full transition duration-200 ease-in-out">
+      class="text-[#0C9CEB] hover:text-[#36B5FA] hover:underline font-medium cursor-pointer px-8 rounded-full transition duration-200 ease-in-out">
 
       Logout
+    </a>
+    <a
+      href="{{ route('admin.list-beasiswa') }}"
+      class="text-[#0C9CEB] hover:text-[#36B5FA] hover:underline font-medium cursor-pointer px-8 rounded-full transition duration-200 ease-in-out">
+
+      Daftar Beasiswa
     </a>
   </div>
 
@@ -25,12 +31,12 @@
       </div>
     @endif
 
-    <h2 class="text-center text-2xl font-semibold text-gray-800 mb-8">Tambah Beasiswa</h2>
+    <h2 class="text-center text-2xl font-semibold text-gray-800 mb-8">Form Beasiswa</h2>
 
     <form method="POST" action="{{ route('beasiswa.store') }}" class="space-y-4">
       @csrf
 
-      <input type="text" name="nama_beasiswa" placeholder="Nama beasiswa" value="{{ old('nama_beasiswa') }}"
+      <input type="text" name="nama_beasiswa" placeholder="Nama beasiswa *" value="{{ old('nama_beasiswa') }}"
              class="w-full border border-[1.5px] border-[#60C3FD] rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#60C3FD]" />
       @error('nama_beasiswa')
         <p class="text-red-500 text-sm mt-1">* {{ $message }}</p>
@@ -64,6 +70,18 @@
         </div>
       </div>
 
+      <input type="text" name="kategori" placeholder="Kategori" value="{{ old('kategori') }}"
+             class="w-full border border-[1.5px] border-[#60C3FD] rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#60C3FD]" />
+      @error('kategori')
+        <p class="text-red-500 text-sm mt-1">* {{ $message }}</p>
+      @enderror
+
+      <input type="url" name="cover" placeholder="URL cover" value="{{ old('cover') }}"
+             class="w-full border border-[1.5px] border-[#60C3FD] rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#60C3FD]" />
+      @error('cover')
+        <p class="text-red-500 text-sm mt-1">* {{ $message }}</p>
+      @enderror
+
       <input type="url" name="url_panduan" placeholder="Link panduan" value="{{ old('url_panduan') }}"
              class="w-full border border-[1.5px] border-[#60C3FD] rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#60C3FD]" />
       @error('url_panduan')
@@ -78,7 +96,7 @@
 
       <div class="flex flex-row gap-[8px] justify-center pt-2">
         <button type="submit"
-                class="bg-[#60C3FD] hover:bg-blue-400 text-white font-medium px-24 py-2 rounded-full transition duration-200 ease-in-out">
+                class="bg-[#60C3FD] hover:bg-blue-400 text-white font-medium w-[240px] py-2 rounded-full transition duration-200 ease-in-out">
           Tambah
         </button>
       </div>

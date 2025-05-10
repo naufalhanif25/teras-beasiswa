@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\BeasiswaController;
+use App\Http\Controllers\BeasiswaListController;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
@@ -18,7 +19,7 @@ Route::get('/', function () {
     }
 
     return view('welcome');
-});
+})->name('welcome');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     if (session('admin_logged_in')) {
@@ -92,5 +93,11 @@ Route::get('/logout-admin', function () {
 })->name('admin.logout');
 
 Route::post('/beasiswa/store', [BeasiswaController::class, 'store'])->name('beasiswa.store');
+
+Route::middleware(['admin.auth'])->group(function() {
+    Route::get('/listbeasiswa', [BeasiswaListController::class, 'index'])->name('admin.list-beasiswa');
+    Route::delete('/listbeasiswa/{id}', [BeasiswaListController::class, 'destroy'])->name('admin.beasiswa-destroy');
+    Route::put('/listbeasiswa/{id}', [BeasiswaListController::class, 'update'])->name('admin.beasiswa-update');
+});
 
 require __DIR__.'/auth.php';
