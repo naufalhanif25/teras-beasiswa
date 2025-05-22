@@ -91,7 +91,7 @@
                                 </svg>
                             </span>
                             <h1 class="text-[16pt] lato-bold text-center">Lengkap</h1>
-                            <p class="text-[12pt] text-center">100.000+ beasiswa terbaru</p>
+                            <p class="text-[12pt] text-center">100+ beasiswa terbaru</p>
                         </span>
                     </div>
                 </section>
